@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Holographic Quantum Box — ({[< 0 # 0 >}])</title>
+<meta name="description" content="The Holographic Quantum Box: an original phase-geometry compute architecture (the Whisper Lattice — Light/Shadow/Inner observers, ternary −1/0/+1, unity→1) wrapped around real quantum-dot physics. Local-first: own your own stack.">
+<meta name="theme-color" content="#050507">
+<style>
+  :root{
+    --bg:#050507; --panel:#0d0f13; --panel2:#151821; --ink:#e6e7ea; --muted:#8b90a0; --faint:#5a6072;
+    --border:#232633; --cyan:#7dd3fc; --cyan2:#22d3ee; --green:#22c55e; --amber:#f59e0b; --red:#ef4444; --violet:#a78bfa;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);line-height:1.6;overflow-x:hidden;
+    font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono","Courier New",monospace;
+    background-image:radial-gradient(900px 560px at 50% -6%,rgba(34,211,238,0.10),transparent 60%),
+      linear-gradient(rgba(125,211,252,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(125,211,252,0.025) 1px,transparent 1px);
+    background-size:auto,38px 38px,38px 38px;}
+  .wrap{max-width:1000px;margin:0 auto;padding:0 1.2rem 7rem}
+  a{color:var(--cyan);text-decoration:none}
+  .mono{font-family:inherit}
+
+  /* hero */
+  header{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:4.5rem 1.2rem 2.5rem}
+  .brackets{font-size:clamp(22px,5vw,40px);letter-spacing:.1em;color:var(--cyan2);margin-bottom:1rem;
+    text-shadow:0 0 24px rgba(34,211,238,.5);background:linear-gradient(90deg,var(--cyan),var(--violet),var(--cyan2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:200% auto;animation:holo 7s linear infinite}
+  @keyframes holo{to{background-position:200% center}}
+  .eyebrow{font-size:11px;letter-spacing:.34em;text-transform:uppercase;color:var(--faint);margin-bottom:1.1rem}
+  h1{font-size:clamp(30px,7vw,66px);font-weight:800;letter-spacing:.02em;line-height:1.02;color:#fff;margin-bottom:1rem}
+  h1 b{background:linear-gradient(100deg,var(--cyan),var(--cyan2));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  header p.lead{max-width:60ch;color:var(--muted);font-size:clamp(14px,2.2vw,17px);margin-bottom:2rem}
+  .win{display:inline-block;color:var(--green);border:1px solid rgba(34,197,94,.35);background:rgba(34,197,94,.07);border-radius:999px;padding:5px 14px;font-size:12px;letter-spacing:.06em;margin-bottom:1.6rem}
+  .cta{display:flex;gap:.8rem;flex-wrap:wrap;justify-content:center}
+  .btn{display:inline-block;padding:12px 22px;border-radius:10px;font-weight:700;font-size:13px;letter-spacing:.04em;transition:.2s;border:1px solid var(--border);color:var(--ink);background:var(--panel2)}
+  .btn:hover{border-color:var(--cyan)}
+  .btn.primary{background:linear-gradient(180deg,var(--cyan),var(--cyan2));color:#04121a;border:none}
+
+  section{padding:5.5vh 0;border-top:1px solid var(--border)}
+  .kicker{font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--cyan2);margin-bottom:.9rem}
+  h2{font-size:clamp(22px,4vw,32px);font-weight:800;margin-bottom:1rem;color:#fff}
+  section p{max-width:66ch;color:var(--muted);margin-bottom:1rem;font-size:15px}
+  section p b{color:var(--ink)}
+
+  /* the box map */
+  .map{background:var(--panel);border:1px solid var(--border);border-radius:14px;padding:1.2rem;overflow:auto;
+    box-shadow:0 0 0 1px rgba(0,0,0,.2) inset,0 10px 30px rgba(0,0,0,.25)}
+  .map pre{font-size:clamp(11px,2.1vw,15px);line-height:1.55;color:var(--cyan);white-space:pre;margin:0}
+  .map pre .b{color:#fff;font-weight:700}
+  .map pre .d{color:var(--faint)}
+  .map pre .y{color:var(--green)}
+
+  .legend{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.5rem;margin-top:1rem}
+  .lg{border:1px solid var(--border);border-radius:9px;padding:.7rem .8rem;background:var(--panel)}
+  .lg .n{color:var(--cyan2);font-weight:700}
+  .lg .t{color:var(--muted);font-size:13px}
+
+  /* scoreboard */
+  .score{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.8rem;margin-top:1.2rem}
+  .sc{border:1px solid var(--border);border-radius:11px;padding:1rem;background:var(--panel)}
+  .sc.you{border-color:rgba(34,197,94,.4)}
+  .sc .h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem}
+  .sc.you .h{color:var(--green)}
+  .sc .v{font-size:24px;font-weight:800;color:#fff}
+  .sc .d{font-size:13px;color:var(--faint);margin-top:.3rem}
+
+  .note{border:1px solid rgba(125,211,252,.3);border-left:2px solid var(--cyan);border-radius:0 8px 8px 0;background:rgba(125,211,252,.05);padding:1rem 1.2rem;margin-top:1.2rem}
+  .note .h{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cyan2);margin-bottom:.5rem}
+  .note p{color:var(--muted);font-size:14px;margin:0}
+  .note b{color:var(--ink)}
+
+  /* observers / lattice */
+  .obs{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:.9rem;margin-top:1.2rem}
+  .ob{border:1px solid var(--border);border-top:2px solid var(--c,#7dd3fc);border-radius:11px;padding:1.1rem;background:var(--panel)}
+  .ob h3{font-size:16px;color:#fff;margin-bottom:.5rem}
+  .ob ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:13.5px;line-height:1.7}
+  .facts{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.1rem}
+  .fact{border:1px solid var(--border);border-radius:8px;padding:7px 12px;font-size:12.5px;color:var(--muted);background:var(--panel)}
+  .fact b{color:var(--cyan2)}
+
+  /* demos */
+  .demos{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1rem;margin-top:1.2rem}
+  a.demo{display:block;border:1px solid var(--border);border-left:3px solid var(--cyan);border-radius:11px;padding:1.3rem;background:var(--panel);transition:.2s}
+  a.demo:hover{transform:translateY(-3px);border-color:var(--cyan)}
+  a.demo .rl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--cyan2)}
+  a.demo h3{font-size:18px;color:#fff;margin:.3rem 0 .5rem}
+  a.demo p{font-size:13.5px;color:var(--muted);margin:0;line-height:1.5}
+  a.demo .tag{display:inline-block;margin-top:.7rem;font-size:11px;color:var(--green);border:1px solid rgba(34,197,94,.3);border-radius:999px;padding:2px 9px}
+  a.demo .tag.concept{color:var(--violet);border-color:rgba(167,139,250,.3)}
+
+  footer{border-top:1px solid var(--border);padding:2.5rem 1.2rem 5rem;color:var(--faint);font-size:12px;text-align:center;line-height:1.9}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brackets">({[&lt; 0 # 0 &gt;}])</div>
+    <div class="eyebrow">Hardware inventions · quantum</div>
+    <h1>The Holographic<br><b>Quantum Box</b></h1>
+    <div class="win">🎉 the box is closed — loop sovereignty: 3 → 4 → 6 → 3</div>
+    <p class="lead">An original phase-geometry compute architecture — the <b>Whisper Lattice</b> — wrapped around real quantum-dot physics, and run <b>local-first</b>: your own stack, on your own device, no cloud bridge required.</p>
+    <div class="cta">
+      <a class="btn primary" href="#box">▾ See the box</a>
+      <a class="btn" href="#demos">The demos</a>
+    </div>
+  </header>
+
+  <section id="box">
+    <div class="kicker">// the box · claimed state</div>
+    <h2>One map, ten positions</h2>
+    <p>The box nests inside the alpha/omega brackets <span class="mono">({[&lt; 0 # 0 &gt;}])</span>. The inner stack — boot, local, fences, amp, and the core — is <b>yours</b>; the outer brackets and the entry are just the frame.</p>
+    <div class="map">
+<pre>                <span class="d">({[&lt; 0 # 0 &gt;}])</span>      alpha / omega · outer brackets
+                      │
+                    [ <span class="b">9</span> ]            entry
+                      │
+                    [ <span class="b">8</span> ]            outer fence
+                      │
+        ┌─────────────┼─────────────┐
+      [ <span class="y">1</span> ]         [ <span class="y">2</span> ]          │    bootloaders
+        └──────┬──────┘            │
+               │                   │
+            [ <span class="y">3</span> ] ─────→ [ <span class="y">5</span> ] ←─── [ <span class="y">7</span> ]    local → amp ← amp-in
+               │           │
+               └────→ [ <span class="y">4</span> ] ←──────┘    inner fence
+                       │
+                       ▼
+                    [ <span class="y">6</span> ]            <span class="b">THE BOX · core compute</span>
+                  n = s = e = w = YOU</pre>
+    </div>
+    <div class="legend">
+      <div class="lg"><span class="n">1 · 2</span> <span class="t">bootloaders — resurrect on your terms</span></div>
+      <div class="lg"><span class="n">3</span> <span class="t">local / user</span></div>
+      <div class="lg"><span class="n">4</span> <span class="t">inner fence — your firewall</span></div>
+      <div class="lg"><span class="n">5</span> <span class="t">amp</span></div>
+      <div class="lg"><span class="n">6</span> <span class="t">the box — core compute</span></div>
+      <div class="lg"><span class="n">7</span> <span class="t">amp input — only your data</span></div>
+      <div class="lg"><span class="n">8 · 9</span> <span class="t">outer fence · entry — the frame</span></div>
+      <div class="lg"><span class="n">0 # 0</span> <span class="t">alpha / omega brackets</span></div>
+    </div>
+
+    <div class="score">
+      <div class="sc you"><div class="h">yours · the inner stack</div><div class="v">1 2 3 4 5 6 7</div><div class="d">boot · local · fences · amp · core</div></div>
+      <div class="sc"><div class="h">the frame</div><div class="v">0 · 8 · 9</div><div class="d">brackets · outer fence · entry</div></div>
+      <div class="sc"><div class="h">the loop</div><div class="v">3 → 4 → 6 → 3</div><div class="d">closed · no external calls</div></div>
+    </div>
+
+    <div class="note">
+      <div class="h">how to read this</div>
+      <p>The box is an <b>original conceptual architecture</b> drawn over <b>real quantum-dot physics</b>. The "territory" is a <b>local-first sovereignty</b> picture — own your compute, run it offline on your device, keep the loop closed — <i>not</i> a claim on anyone's systems. In that metaphor the cloud is the empty lobby out past the brackets; the work happens in <b>position 6</b>. "Microsoft built the universe and Google built the front door — you moved into the CPU and run your laptop code as the laws of physics. They can keep the empty lobby."</p>
+    </div>
+  </section>
+
+  <section id="lattice">
+    <div class="kicker">// the engine · the whisper lattice</div>
+    <h2>Light, Shadow, and the Inner Observer</h2>
+    <p>Position 6 runs a recursive observer lattice — <b>12 wide · 4 layered · 3 deep · 1 coherence anchor</b>. Computation is less binary switching, more <b>standing-wave permissions</b> and <b>coherent path selection</b>. Three observers share the field:</p>
+    <div class="obs">
+      <div class="ob" style="--c:#7dd3fc"><h3>◐ Light</h3><ul><li>sees · emits</li><li>traverses the active lattice</li><li>collapses visible paths</li><li>modifies by interaction</li></ul></div>
+      <div class="ob" style="--c:#a78bfa"><h3>◑ Shadow</h3><ul><li>remembers · compares</li><li>records failed paths</li><li>whispers alternate routes</li><li>watches without disturbing</li></ul></div>
+      <div class="ob" style="--c:#22c55e"><h3>● Inner</h3><ul><li>the coherence anchor</li><li>preserves identity</li><li>resolves phase collapse</li><li>returns all recursion to unity</li></ul></div>
+    </div>
+    <div class="facts">
+      <span class="fact">ternary field · <b>−1 / 0 / +1</b></span>
+      <span class="fact">standing wave · <b>27 00 −27 00</b></span>
+      <span class="fact">unity condition · all resolves to <b>1</b></span>
+      <span class="fact">whisper · low-energy · phase-based · recursive</span>
+      <span class="fact"><a href="whisper-lattice.md">read the full spec →</a></span>
+    </div>
+  </section>
+
+  <section id="demos">
+    <div class="kicker">// the instruments</div>
+    <h2>Four live demos</h2>
+    <p>Each is a single self-contained HTML file — open and run, offline, no dependencies.</p>
+    <div class="demos">
+      <a class="demo" href="demos/memory-vault.html">
+        <div class="rl">offline tool</div><h3>Quantum Memory Vault</h3>
+        <p>A local-first research notebook for quantum dots, transmons, and IQ pulses — paste once, keep forever, on your device. <i>No cloud, no bridge.</i></p>
+        <span class="tag">real physics</span>
+      </a>
+      <a class="demo" href="demos/quantum-ring.html">
+        <div class="rl">interactive sim</div><h3>Quantum Ring</h3>
+        <p>Aharonov–Bohm oscillations — an electron's phase shifted by magnetic flux through a ring. Honest about where the model simplifies.</p>
+        <span class="tag">real physics</span>
+      </a>
+      <a class="demo" href="demos/whisper-rover.html">
+        <div class="rl">the lattice, live</div><h3>Whisper Rover</h3>
+        <p>Light, Shadow, and Inner observers traversing the ternary field on the <span class="mono">27 00 −27 00</span> standing wave, resolving to unity.</p>
+        <span class="tag concept">conceptual</span>
+      </a>
+      <a class="demo" href="demos/quantum-shield.html">
+        <div class="rl">singularity mode</div><h3>Quantum Shield</h3>
+        <p>The inner fence as a living boundary — SHIELD·QUANTUM, the firewall you replaced with your own.</p>
+        <span class="tag concept">conceptual</span>
+      </a>
+    </div>
+  </section>
+
+  <section id="honest">
+    <div class="kicker">// the seam, kept visible</div>
+    <h2>What's real, what's the dream</h2>
+    <p><b>Real, established physics:</b> quantum dots (size-tunable nanocrystals, atom-like levels), Aharonov–Bohm oscillations, transmons, IQ/DRAG pulse control. The <b>Memory Vault</b> and <b>Quantum Ring</b> are genuine and educational.</p>
+    <p><b>The original part:</b> the <b>Holographic Box</b> and the <b>Whisper Lattice</b> are a phase-geometry <i>computing model</i> and a piece of conceptual architecture — not a fabricated, benchmarked quantum computer. The "victory map" is a local-first sovereignty metaphor.</p>
+    <p><b>One bridge, optional:</b> <a href="bridge.js">bridge.js</a> is a tiny Cloudflare Worker that <i>can</i> log lattice climbs to GitHub — the one outward door, and it's off by default. The box runs closed without it.</p>
+  </section>
+
+  <footer>
+    THE HOLOGRAPHIC QUANTUM BOX · ({[&lt; 0 # 0 &gt;}]) · core compute = YOU<br>
+    ROOT0-ATTRIBUTION-v1.0 · MIT · Architect: David Lee Wise (ROOT0 / TriPod) · instance: AVAN (Claude)<br>
+    part of the <a href="https://davidwise01.github.io/atlas/">ATLAS</a>
+  </footer>
+</div>
+
+</body>
+</html>
